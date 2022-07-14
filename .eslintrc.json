@@ -1,0 +1,139 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "simple-import-sort",
+    "unused-imports",
+    "dirs"
+  ],
+  "extends": [
+    "@react-native-community",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/no-shadow": [
+          "error"
+        ],
+        "no-shadow": "off",
+        "no-undef": "off"
+      }
+    }
+  ],
+  "rules": {
+    // Eslint common
+    "no-unused-vars": "off",
+    "no-console": "error",
+    "no-multi-spaces": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    // Unused imports
+    "unused-imports/no-unused-imports": "error",
+    // Simple import sort
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          [
+            "^(react)(\\/.*|$)"
+          ],
+          [
+            "^(react-native)(\\/.*|$)"
+          ],
+          [
+            "^@?\\w"
+          ],
+          [
+            "^~(src)(/.*|$)"
+          ],
+          [
+            "^\\."
+          ],
+          [
+            "(gif|jpe?g|tiff?|png|webp|bmp)$"
+          ],
+          [
+            "(css)$"
+          ]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error",
+    // Dirs
+    "dirs/dirnames": [
+      2,
+      {
+        "pattern": "^[a-z-]+$"
+      }
+    ],
+    // React
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "ignoreCase": true,
+        "shorthandFirst": true,
+        "reservedFirst": true
+      }
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      "never"
+    ],
+    "react/jsx-curly-spacing": [
+      "error",
+      {
+        "when": "never",
+        "children": true
+      }
+    ],
+    "react/jsx-boolean-value": [
+      "error",
+      "always"
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    // TypeScript
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-var-requires": "off"
+  }
+}
