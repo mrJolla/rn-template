@@ -1,4 +1,4 @@
-import React, { type PropsWithChildren } from 'react';
+import React, { type PropsWithChildren, useEffect } from 'react';
 
 import {
   SafeAreaView,
@@ -16,6 +16,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import SplashScreen from 'react-native-splash-screen';
 
 const Section: React.FC<
   PropsWithChildren<{
@@ -23,6 +24,7 @@ const Section: React.FC<
   }>
 > = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
+
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -55,6 +57,10 @@ export const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   return (
     <SafeAreaView style={backgroundStyle}>

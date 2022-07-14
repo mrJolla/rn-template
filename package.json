@@ -6,6 +6,10 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "yarn-clean": "yarn cache clean && react-native start --reset-cache",
+    "rn-install": "rm -rf node_modules && yarn install && cd ios && rm -rf Podfile.lock && rm -rf Pods && pod install && cd ..",
+    "android-build": "cd android && ./gradlew clean && ./gradlew assembleRelease && ./gradlew bundleRelease && cd ..",
+    "android-clean": "cd android && rm -rf build && ./gradlew clean && cd ..",
     "test:all": "yarn tsc --noEmit && yarn test:eslint",
     "test:all:fix": "yarn tsc --noEmit && yarn test:eslint:fix && yarn test:prettier",
     "test:eslint": "eslint './src/**/*.{ts,tsx,js}'",
@@ -14,8 +18,17 @@
     "test:commit": "commitlint -e"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "pluralize-ru": "^1.0.1",
     "react": "18.2.0",
-    "react-native": "0.69.1"
+    "react-hook-form": "^7.33.1",
+    "react-native": "0.69.1",
+    "react-native-fast-image": "^8.5.11",
+    "react-native-mmkv": "^2.4.3",
+    "react-native-splash-screen": "^3.3.0",
+    "react-native-svg": "^12.3.0",
+    "react-native-webp-format": "^1.1.2",
+    "react-query": "^3.39.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
